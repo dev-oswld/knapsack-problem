@@ -3,3 +3,6 @@
 
 # My VirtualEnv
 ks-problem
+
+# Test and ignore all
+*.txt
