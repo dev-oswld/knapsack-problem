@@ -5,7 +5,8 @@ import os
 
 def main_menu():
     print(
-        "\n  ~~~ MENU ~~~\n1.Lowest to Highest\n2.Highest to Lowest\n3.The Knapsack problem with RI\n4.Exit")
+        "\n  ~~~ MENU ~~~\n1.Lowest to Highest\n2.Highest to Lowest\n3.The Knapsack problem with RI\n4.Exit"
+    )
     action = int(input("Go to: "))
 
     if action == 1:
@@ -49,7 +50,7 @@ def lower_heuristic(weight_final, items_ks):
     ks_final.append(c_value_new)
     ks_final.append(c_weight_new)
     ks_aux = np.transpose(ks_final)
-    np.savetxt("results_LOW.txt", ks_aux, delimiter=" ", header="vi wi", fmt="%i")  
+    np.savetxt("results_LOW.txt", ks_aux, delimiter=" ", header="vi wi", fmt="%i")
     file = open("results_LOW.txt", "a")
     file.writelines("\nInstance: " + str(items_ks))
     file.writelines("\nNumber of items: " + str(len(column_id)))
@@ -89,9 +90,7 @@ def highest_heuristic(weight_final, items_ks):
     ks_final.append(c_value_new)
     ks_final.append(c_weight_new)
     ks_aux = np.transpose(ks_final)
-    np.savetxt(
-        "results_HIGH.txt", ks_aux, delimiter=" ", header="vi wi", fmt="%i"
-    ) 
+    np.savetxt("results_HIGH.txt", ks_aux, delimiter=" ", header="vi wi", fmt="%i")
     file = open("results_HIGH.txt", "a")
     file.writelines("\nInstance: " + str(items_ks))
     file.writelines("\nNumber of items: " + str(len(column_id)))
@@ -136,9 +135,7 @@ def ri_heuristic(weight_final, items_ks):
     ks_final.append(c_value_new)
     ks_final.append(c_weight_new)
     ks_aux = np.transpose(ks_final)
-    np.savetxt(
-        "results_RI.txt", ks_aux, delimiter=" ", header="vi wi", fmt="%i"
-    )
+    np.savetxt("results_RI.txt", ks_aux, delimiter=" ", header="vi wi", fmt="%i")
     file = open("results_RI.txt", "a")
     file.writelines("\nInstance: " + str(items_ks))
     file.writelines("\nNumber of items: " + str(len(column_id)))
@@ -179,9 +176,7 @@ knapsack.append(id)
 knapsack.append(values)
 knapsack.append(weights)
 knapsack_final = np.transpose(knapsack)
-np.savetxt(
-    "instance.txt", knapsack_final, delimiter=" ", header="vi wi", fmt="%i"
-) 
+np.savetxt("instance.txt", knapsack_final, delimiter=" ", header="vi wi", fmt="%i")
 new_name = "{}_{}.txt".format("instance", items_ks)
 os.rename("instance.txt", new_name)
 
